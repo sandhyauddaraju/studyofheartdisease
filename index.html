@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Heart Disease</title>
+       <link rel="stylesheet"  href="Styles.css">
+        <script type="text/javascript" src="d3/d3.v3.js">        
+        </script>
+    </head>
+    <body>
+        <div id="full-page">
+			<div id="head" class ="head">Indicators of Heart Disease</div>
+            <div id="menu" class ="menu">  
+			<a href="index.html">Home</a>
+			<a href="document.html">Document</a>
+			<a id="show" href='javascript:;' onclick='showEmbeddedVideo();'>Video</a>
+			<a href="About.html">About</a>
+			
+			</div>
+			<div id="body">
+                <div id="main" class ="main">
+                    <div id="Div1" class ="divheader"><h2>Key Indicators of Heart Disease</h2></div>
+                    <div id="pieDiv" class="pieDiv">     
+                       <!-- <svg id="Genderpie_svg"></svg>     -->
+                        <!--<svg id="legend_svg"></svg>-->
+                    </div>
+                     
+                    <div id="barchart" class="barchart">           
+                           
+                    </div> 
+                    <div id="barchartRD" class="barchartRD">                         
+                    </div>
+                    <div id="BMIhistogram" class="BMIhistogram"> </div>
+                    
+                    <div id="groupedbarchart2" class="groupedbarchart2"></div>
+                    
+                    
+                </div>
+                <div id="foot" class="foot">
+                    <div id="Div2" class ="divheader"><h2>Other disease Indicators </h2></div>
+                    
+                        <div id="dynamicGroupedBarChart" class="dynamicgroupedbarchart">
+                            <div class="panel-body">
+                                <form role="form" class="categories">
+                                </form>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="graph"></div>
+                            </div>
+                        </div>
+                        <div id="donutDiv"  class="donutDiv">           
+                            <label style="font-size: small;">Percentage Of Population Having </label>
+                            <select id="selectDisease"></select> 
+                            <label style="font-size: small;">vs Not Having it </label><br/>
+                        </div>
+                </div>
+                    
+                
+              
+               
+               <div id="depth" class="depth">
+                <div id="Div3" class ="divheader"><h2>Overall health indicators </h2></div>
+                <div id="depthpie_super" class="depthpie_super"> 
+                    <div id="genhealthPie" class="depthpie"> </div>
+                    <div id="physicalActivity" class="depthpie"> </div>
+                </div>
+                    <div id="PHhistogram" class="PHhistogram"> </div>
+                    <div id="MHhistogram" class="MHhistogram"> </div>
+               </div>
+               <div id="parallelCoordinates" class="parallelCoordinates"> 
+                <div id="Div4" class ="divheader"><h2>Parallel co-ordinates with sample data </h2></div>
+                <div class="container1" id="parallelDiv"></div>                       
+                <div class="ScrollStyle container2" id="grid"></div>
+               </div>
+             
+                			
+            </div>
+           
+            
+	    </div>
+        	
+      
+        <div id="tooltip" class="hidden">			
+        <p><span id="value"></span></p>
+        </div>
+        <div id="tooltip1" class="hidden">			
+            <p><span id="value"></span></p>
+        </div> 
+        <div id="main_video_link" class ="main_video_link">
+            <dialog id="videoDialog" class="video_link">
+                <iframe width="100%" height="95%" src="https://www.youtube.com/embed/26CWhh9w1zU" title="Video Presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <br/>
+                <button id="hide">Close</button>
+            </dialog>
+        </div>
+        <script src="visualManager.js"></script>
+        <script src="classes.js"></script>        
+        <script src="common.js"></script>
+        <script src="loadCharts.js"></script>
+        <script src="pie.js"></script>
+        <script src="donut.js"></script>
+        
+       
+        <script src="parallelCoordinates.js"></script>
+        <!--<script src="groupedBarChart.js"></script>-->
+        <!--<script type='text/javascript' src='script.js'></script>-->
+        <script src="dynamicGroupedBarChart.js" ></script>
+    </body>
+</html>

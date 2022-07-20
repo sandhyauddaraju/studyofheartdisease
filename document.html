@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Visualization</title>
+       <link rel="stylesheet"  href="Styles.css">
+        <script type="text/javascript" src="d3/d3.v3.js">
+          
+        </script>
+    </head>
+    <body>
+       <div id="full-page">
+        <div id="head" class ="head">Indicators of heart disease</div>
+            <div id="menu" class ="menu">  
+			<a href="index.html">Home</a>
+			<a href="document.html">Document</a>
+			<a id="show" href='javascript:;' onclick='showEmbeddedVideo();'>Video</a>
+			<a href="About.html">About</a>
+			 
+			</div>
+			<div id="body">
+        
+				<div id="main_video_link" class ="main_video_link">
+					<dialog id="videoDialog" class="video_link">
+						<iframe width="100%" height="95%" src="https://www.youtube.com/embed/26CWhh9w1zU" title="Video Presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<br/>
+						<button id="hide">Close</button>
+					</dialog>
+				</div>
+      
+				<div id ="document" class ="document">
+          <h1>Introduction</h1>
+          <p>Heart disease is one of the driving causes of death in the United States among all races. According to CDC, one person dies every 36 seconds in the United States from Heart disease. Coronary heart disease and Myocardial infarction are the common types of heart diseases killing people. A few other medical conditions and way of life choices can moreover put individuals at the next chance for heart disease. Identifying and predicting the components that have the most prominent effect on heart infection is exceptionally vital in healthcare. </p>
+          <h1>Dataset</h1>
+				<p> We collected the dataset from <a href="https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease?select=heart_2020_cleaned.csv." >Kaggle.</a> The dataset contains 18 columns that directly or indirectly influence heart disease.
+        The total number of records in the dataset is 319,795 and the records for the population having heart disease is 27,373.</p>
+        <img src="Datasetimg.JPG">
+        <p> </p>
+        
+          <h1>Design Choices</h1>
+          <img src="Initial Design.JPG">
+          <p>Initial Design to create a dashboard showing parallel coordinates and various other visuals.</p>
+          <br>
+          
+          <p>Final design was more refined.
+            <br>1.  We used pie/donut chart for dimensions containing 0 or 1.
+            <br>2.  The color encoding keeps color blindness scenario in mind. 
+            <br>3.  Tool tips are provided for the bar chart, pie chart, donut chart, grouped bar chart to give additional information to the user. 
+            <br>4.  Interactions between charts to observe the impacts on multiple attributes. 
+            <br>5.  Dynamic charts based on user selection like dropdown and checkboxes for selecting disease. 
+            <br>6.  We've used parallel coordinates to observe multiple attributes with a sample data of 1000 and we have chosen Red/Green/Blue to represent the age groups as these colors are easy to identify. 
+            <ul>Red (18-39)</ul> 
+            <ul>Green (40-59)</ul> 
+            <ul>Blue (60-80 or older) </ul> </p>
+            <p>
+            <br>7. A table is associated with parallel coordinates to view the observations while interacting with it. 
+            <br>8. We've arranged the visuals from left to right, top to bottom so that they answer the breath questions and then the depth questions.
+            The parallel co-ordinates in the end helps to validate the above observations.
+          </p>
+          <br>
+          <h1>Process</h1>
+          <img src="Designprocess.JPG">
+          <p>The process was to build the visual is described in the above image. </p>
+          <h1>Observations: </h1>
+          <p>
+             1.	Chances of getting heart disease for males is more.
+            <br> 2.	Chances of heart disease increase with age. 
+            <br> 3.	White population has the maximum chances of getting heart disease. (It may be due to the location (US) where data is collected). 
+            <br> 4.	BMI suggests that obese and overweight categories have very high chances of getting heart disease as compared to underweight category. 
+            <br> 5.	We found that the probability of having heart disease is more for population with smoking habit, and less impact with drinking. 
+            <img src="Observation-1.JPG" alt="Observation image" >
+            <br> 6.	There is a higher percentage of people having heart disease with diabetes.<br><br>
+            <img src="Observation-2.JPG" alt="Observation image" >
+            
+            
+            <br>7. Although the chances of having other diseases increase with age, diabetic cases are at peak in the age group 70-74 and skin cancer is at peak in the age group 80 or older. 
+            <br><br>To get a deeper understanding of relationships between Race, Gender, Age group, BMI, Sleep time .
+            <br>8. We've used parallel coordinates with sample data of 1000, the above observations are validated and found to be true with respect to Race, Gender, Age group, BMI, Sleep time. 
+            <br>
+            <br>
+            <img src="Observation-4.JPG" alt="Observation image" >
+            <br><br>
+          </p>
+          <h1>References</h1>
+          <p> 
+          1. An Introduction to Designing with D3 by Scott Murray | Interactive data visualization for the web.<br>
+          2. https://www.w3schools.com/ for html and css<br> 
+          3. https://bl.ocks.org/Andrew-Reid/64a6c1892d1893009d2b99b8abee75a7 <br>
+          
+          4. https://www.frameworkish.com/html/2016/05/04/grouped-dynamic-bar-chart-d3.html <br>
+          
+          5. https://codepen.io/Rastikko/pen/GqNbqM <br>
+          
+          6. https://bl.ocks.org/jasondavies/1341281 <br>
+          
+          7. https://bl.ocks.org/syntagmatic/482706e0638c67836d94b20f0cb37122 <br>
+          
+          8. http://bl.ocks.org/jfreels/6734025 <br>
+          
+          </p>
+				</div>
+				
+			  </div>
+       </div>
+
+
+ 
+       <script type="text/javascript">
+									
+
+        var dialog = null;
+        (function loadVideoDialog(){
+        dialog = document.getElementById('videoDialog');
+        document.getElementById('hide').onclick = function(){
+            dialog.close();
+            };
+        })();
+
+        function showEmbeddedVideo(){
+            if(dialog != null){dialog.showModal();}
+            else return true;
+        };
+  
+
+
+
+
+  </script>
+    </body>
+</html>
